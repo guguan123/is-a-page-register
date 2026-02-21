@@ -1,5 +1,5 @@
 /**
- * is-a.page PR 自动化校验脚本 (v3.0 - 全能配套版)
+ * is-a.page PR 自动化校验脚本 (v3.1 - 全能配套版)
  * 特性:
  *  - 兼容 JSON 注释 (// 和 /* * /)
  *  - 自动识别并校验 A / AAAA / CNAME / TXT / MX / REDIRECT
@@ -42,6 +42,9 @@ function validateFile(filename, data) {
   const subdomain = filename.replace('.json', '').toLowerCase();
 
   // === 0. 基础域名格式校验 (RFC 1123) ===
+  if (subdomain.length < 4) {
+    errors.push(`Subdomain "${subdomain}" is too short. Minimum length is 4 characters.`);
+  }
   const labelRegex = /^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$/;
   if (!labelRegex.test(subdomain)) {
     errors.push('Invalid subdomain format. Allowed: lowercase letters, numbers, hyphens. No start/end hyphens. Length 1-63.');
