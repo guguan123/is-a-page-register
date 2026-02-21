@@ -34,9 +34,9 @@ jobs:
       # 4. 运行同步脚本，并注入所有 Secrets
       - name: Run Sync Script
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CLOUDFLARE_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          CLOUDFLARE_LIST_ID: ${{ secrets.CF_LIST_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_LIST_ID: ${{ secrets.CLOUDFLARE_LIST_ID }}
           KEYWORD_BLOCKLIST: ${{ secrets.KEYWORD_BLOCKLIST }}
         run: npm run sync
