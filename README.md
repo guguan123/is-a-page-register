@@ -44,7 +44,8 @@ Fork 本仓库。在 `domains/` 目录下创建一个新的 JSON 文件。
   "type": "REDIRECT",
   "url": "https://your-workspace.notion.site/your-long-page-id",
   "owner": {
-    "username": "你的 GitHub 用户名"
+    "username": "你的 GitHub 用户名",
+    "email": "你的邮箱"
   }
 }
 ```
@@ -60,7 +61,7 @@ Fork 本仓库。在 `domains/` 目录下创建一个新的 JSON 文件。
   "proxied": true,
   "owner": {
     "username": "你的 GitHub 用户名",
-    "email": "你的邮箱（选填）"
+    "email": "你的邮箱"
   }
 }
 ```
